@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Registrate Aqui</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php" name="registro" method="post">
+    <div class="container">
+      <h1>Registro</h1>
+      <p>Favor llenar las casillas con la informacion solicitada</p>
+      <hr>
+      <label for="nombre"><b>Nombre de Usuario</b> </label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ingrese nombre de usuario" required>
+            
+      <label for="email"><b>Ingrese Email</b></label><hr>
+      <input type="email" id="email" class="form-control"  placeholder="Correo@dominio.com" name="email" required> <hr>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id="psw1" class="form-control" placeholder="Ingrese Password" name="psw" required>
+
+      <label for="psw-repeat"><b>repita Password</b></label>
+      <input type="password" id="psw2" class="form-control" placeholder="Repita Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
+      </label>
+
+      <p>Al crear una cuenta, usted acepta nuestros derechos reservados <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button"  href="#menu" class="cancelbtn">Cancelar</button>
+        <button type="submit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="submit">Registrarse</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

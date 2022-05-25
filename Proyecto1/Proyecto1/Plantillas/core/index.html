@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donde la Vieja</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB2fLqEcxJFE1bkTPKiXlKIj-6nBH8zts&callback=initMap"></script>
+  
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("img/fondo.webp");
+  min-height: 90%;
+}
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;  
+}
+.topnav-right {
+  float: right;}
+
+  #map {
+        height: 100%;
+        }
+     
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">DESTACADOS</a>
+    <a href="#myMap" class="w3-bar-item w3-button">CUENTA</a>
+    <a href="carrito.html" class="w3-bar-item w3-button">CARRITO</a>
+    <div class="topnav-right">
+      <a href="registro1.html" class="w3-bar-item w3-button">Registro</a>
+      <a href="login1.html" class="w3-bar-item w3-button">Log in</a>
+    </div>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Abierto de 10am a 12pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">DONDE<br>LA VIEJA</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>DONDE<br>LA VIEJA</b></span>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">REVISA EL MENU</a></p>
+  </div>
+</header>
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">EL MENU DE LA VIEJA</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Ensalada</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Compatir</div>
+      </a>
+    </div>
+
+    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Margarita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.500</span></h1>
+      <p class="w3-text-grey">Frescos tomates, fresco queso mozzarella, albahaca del huerto</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+   
+      <h1><b>Cuatro quesos</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$15.350</span></h1>
+      <p class="w3-text-grey">cuatro quesos (mozzarella, parmesano, pecorino romano, jarlsberg)</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+      
+      <h1><b>Pollo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$17.000</span></h1>
+      <p class="w3-text-grey">Frescos tomates, mozzarella, pollo, cebolla</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+
+      <h1><b>Hawaiana</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$16.550</span></h1>
+      <p class="w3-text-grey">Frescos tomates, mozzarella, fresca pina, tocino, albahaca fresca</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+
+      <h1><b>Todas las carnes</b> <span class="w3-tag w3-red w3-round">Caliente!</span><span class="w3-right w3-tag w3-dark-grey w3-round">$20.000</span></h1>
+      <p class="w3-text-grey">Frescos tomates, mozzarella,  pepporoni, pebre, carne, pollo</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+
+      <h1><b>Parmesano</b> <span class="w3-tag w3-grey w3-round">Nuevo</span><span class="w3-right w3-tag w3-dark-grey w3-round">$21.150</span></h1>
+      <p class="w3-text-grey">Frescos tomates, mozzarella, parmesano, bacon, rucula fresca</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.050</span></h1>
+      <p class="w3-text-grey">Salsa especial, mozzarella, parmesano, carne molida de vacuno</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+   
+      <h1><b>Ravioli</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$14.500</span></h1>
+      <p class="w3-text-grey">Ravioli rellenos con queso</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+      
+      <h1><b>Spaghetti Classica</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$11.000</span></h1>
+      <p class="w3-text-grey">Frescos tomates, cebolla,  carne molida de vacuno</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+
+      <h1><b>Mar y tierra</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$25.500</span></h1>
+      <p class="w3-text-grey">Salmon, camaron, cangrejo, ajo</p>
+    
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+    </div>
+
+
+    <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Sopa del dia</b> <span class="w3-tag w3-grey w3-round">Ocacional</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.500</span></h1>
+      <p class="w3-text-grey">Preguntar al garzon</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+   
+      <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.500</span></h1>
+      <p class="w3-text-grey">Pan con pesto, tomates, cebolla, ajo</p>
+      <hr>
+      
+      <h1><b>Pan de ajo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$9.500</span></h1>
+      <p class="w3-text-grey"> ciabatta grillada, mantequilla de ajo, caramelo de cebolla</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+      <hr>
+      
+      <h1><b>Tomozzarella</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$10.000</span></h1>
+      <p class="w3-text-grey">Tomates con mozzarella</p>
+      <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+    </div><br>
+
+  </div>
+</div>
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Destacado</h1>
+    <div class="container">
+        <h2>Categorias</h2>  
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <section class="conteiner">
+                <article class="post">
+                    <h2>Ensalada Cesar</h2>
+                    <div>
+                        <img src="img/referencial.jpg" alt="ensalada" style="width: 100;" class="responsive">
+                    </div>
+                    <p class="descripcion">ensalada de lechuga romana y croutons con jugo de limon, aceite de oliva, huevo, salsa Worcestershire, anchoas, ajo, mostaza de Dijon, queso parmesano y pimienta negra.La ensalada César original no contiene pollo, aunque se le suele agregar habitualmente.</p>
+                </article>
+                <aside class="precio">
+                    <p>precio:$6.990</p>
+                    <button type="button" class="boton"> <a href="carrito.html">agregar al carrito</a> </button>
+                </aside>
+            </section>
+            </div>
+      
+            <div class="item">
+                <section class="conteiner">
+                    <article class="post">
+                        <h2>Platos prepadados</h2>
+                        <div>
+                            <img src="img/lomo-saltado.jpg" alt="lomo-saltado" style="width: 100;" class="responsive">
+                        </div>
+                        <p class="descripcion">El lomo saltado es un plato típico de la gastronomía del Perú consistente en carne de res, arroz cocido y papas fritas. Es uno de los platos más consumidos popularmente en el Perú</p>
+                    </article>
+                    <aside class="precio">
+                        <p>precio:$8.990</p>
+                        <button type="button" class="boton"> <a href="carrito.html">agregar al carrito</a> </button>
+                    </aside>
+                </section>
+            </div>
+          
+            <div class="item">
+                <section class="conteiner">
+                    <article class="post">
+                        <h2>Comida Rapida</h2>
+                        <div>
+                            <img src="img/hamburguesa.png" alt="hamburguesa" style="width: 100;" class="responsive">
+                        </div>
+                        <p class="descripcion">Las mejores hamburguesas en todas sus variedades.</p>
+                    </article>
+                    <aside class="precio">
+                        <p>precio:$5.990</p>
+                        <button type="button" class="boton"> <a href="carrito.html">agregar al carrito</a> </button>
+                    </aside>
+                </section>
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    <hr size="3px"/>
+    <div class="w3-row">
+      <div class="w3-col s6">
+        <p>Lun & Jue Cerrado</p>
+        <p>Miercoles 10:00 hr - 24:00hr </p>
+        <p>Martes 12:00 hr - 24:00 hr </p>
+      </div>
+      <div class="w3-col s6">
+        <p>Vie 10:00 hr - 12:00 hr</p>
+        <p>Sabado 10:00 hr - 23:00 hr </p>
+        <p>Domingo Cerrado</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<div class="w3-row" style="width:100%; height: 500px;"  id="Map">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="latitud">latitud</label>
+      <input type="text" id="latitud" class="form-control">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="longitud">longitud</label>
+      <input type="text" id="longitud" class="form-control">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="Map"></div>
+  </div>
+</div>
+<!-- Contact -->
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Cuenta</h1>
+    <h2>Bienvenido;</h2>
+    <p><span class="w3-tag">Administrador</span> Aqui se podran gestionar las incorporaciones de nuevos productos al menu</p>
+    <p class="w3-xxlarge"><strong>Complete</strong> la siguiente tabla con los datos que se solicitan a continuacion:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="id del producto" required name="number"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Descripcion" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="$Precio" required name="Precio"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="file" placeholder="file" required name="File"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">Agregar publicacion</button></p>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-google"></a>
+  <p>Volver Al Inicio <a href="#home" title="W3.CSS" class="w3-hover-text-green">home</a></p>
+  <p>copyright 2022</p>
+</footer>
