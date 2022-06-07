@@ -1,0 +1,46 @@
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;}
+
+header{
+    background-color: #364552;
+    color: white;
+    padding: 2rem 2rem;
+}
+#titulo{
+    text-align: unset;
+    text-align: center;  
+    color: #fff;
+    font-size: 3rem;}
+.conteiner{
+    padding: 1rem;
+}
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;}
+        
+    
+    footer{
+        background-color: #222 ;
+        padding: 3rem;
+        color: #fff;  
+    }
+    footer section{
+        padding: 1rem 2rem;
+        justify-content: right;
+    }
+    footer p{
+        margin: 0;
+    }
+    footer a{
+        color: #fff;
+        text-decoration: none;}
+

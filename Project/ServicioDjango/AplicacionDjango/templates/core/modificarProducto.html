@@ -1,0 +1,21 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+    Modificar Producto 
+{% endblock tituloCore %}
+
+{% block Core %}
+
+<div class="card">
+    <div class="card-header">
+        Modificar un Producto
+    </div>
+    <div class="card-body">
+        <h4 class="card-tittle">Datos del Producto</h4>
+
+        {% include 'AplicacionDjango/formulario2.html'  %}   
+
+    </div>
+</div>
+
+{% endblock Core %}

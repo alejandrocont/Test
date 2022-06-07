@@ -1,0 +1,37 @@
+<h2>Inicio de sesion</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="{% url 'login' %}" method="post" enctype="multipart/form-data" id="sesion"
+        name="sesion">
+        {% csrf_token %}
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+        </div>
+
+        <div class="container form-group">
+            <label for="nombre"><b>Nombre de Usuario:</b> </label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ingrese nombre de usuario"
+                value="{{Usuario.nombreUsuario}}" required readonly>
+
+
+            <label for="contraseña"><b>Ingrese Contraseña:</b></label>
+            <input type="password" id="contraseña" class="form-control" placeholder="Ingrese Password" name="contraseña"
+                required readonly>
+
+            <button type="submit">Ingresar</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Recordarme
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancelar</button>
+            <span class="psw">recuperar su contraseña <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>

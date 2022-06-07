@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>{% block tituloCore %} {% endblock tituloCore %}</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB2fLqEcxJFE1bkTPKiXlKIj-6nBH8zts&callback=initMap"></script>
+</head>
+
+<body>
+
+
+
+
+    <div class="w3-top w3-hide-small">
+        <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+            <a href="{% url 'home2' %}" class="w3-bar-item w3-button">HOME</a>
+            <a href="{% url 'menu' %}" class="w3-bar-item w3-button">MENU</a>
+            <a href="{% url 'destacados' %}" class="w3-bar-item w3-button">DESTACADOS</a>
+            <a href="{% url 'cuenta' %}" class="w3-bar-item w3-button">CUENTA</a>
+            <a href="{% url 'carrito' %}" class="w3-bar-item w3-button">CARRITO</a>
+            <div class="topnav-right">
+                {% if user.is_authenticated %}
+                <div class="nav-link">
+                    <a href="{% url 'perfil' %}" class="w3-bar-item w3-button">{{user.username}}</a>
+                    <a href="{% url 'logout' %}" class="w3-bar-item w3-button">Salir</a>
+                </div>
+                {% else %}
+                <div class="nav-link">
+                    <a href="{% url 'feed' %}" class="w3-bar-item w3-button">Iniciar Sesion</a>
+                    <a href="{% url 'registro2' %}" class="w3-bar-item w3-button">Registro</a>
+                
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                {% block Core %}
+
+                {% endblock Core %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-google"></a>
+        <p>Volver Al Inicio <a href="{% url 'home2' %}" title="HOME" class="w3-hover-text-green">home</a></p>
+        <p>copyright 2022</p>
+    </footer>
+</body>

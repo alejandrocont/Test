@@ -1,0 +1,36 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+Perfil
+{% endblock tituloCore %}
+
+{% block Core %}
+
+
+<div class="card">
+    <div class="card-header">
+        Perfil Usuario
+    </div>
+    <div class="card-body">
+        {% for l in Usuario %}
+        <h4 class="card-tittle">{{l.nombreUsuario}}</h4>
+
+        <p class="card-text">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre Usuario: {{l.nombreUsuario}}</label>
+                    <input type="text" class="form-control" id="nombreUsuario" placeholder="Nombre Usuario"
+                        value="{{l.nombreUsuario}}">
+                    <label for="correoUsuario">Correo Usuario:{{l.correoUsuario}} </label>
+                    <input type="email" class="form-control" id="correoUsuario" placeholder="Correo Usuario"
+                        value="{{l.correoUsuario}}">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock Core %}

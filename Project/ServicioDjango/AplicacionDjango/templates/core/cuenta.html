@@ -1,0 +1,44 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+   Cuenta
+{% endblock tituloCore %}
+
+{% block Core %}
+{for item in items}
+<div class="card">
+    <div class="card-header">
+        Fecha de creacion: {{ item.fecha }}
+    </div>
+    <div class="card-body">
+        <h4 class="card-tittle">Total: {{ item.total }}</h4>
+        {% endfor %}
+        <table>
+            <thead>
+                <tr>
+                    <th>IDProducto</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Foto</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>{% for p in items %}
+                    <td>{{ p.idProducto }}</td>
+                    <td>{{ p.nombreProducto }}</td>
+                    <td>{{ p.descripcion }}</td>
+                    <td>{% if p.foto %}
+                        <img src="{{ p.foto.url }}" style="height: 100%;max-height: 100px;  width: 100%;max-width: 100px;">
+                    {% endif %}</td>
+                    <td>{{ p.precio }}</td>
+                    <td>{{ p.categoria }}</td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock Core %} 

@@ -1,0 +1,55 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+    Listado Producto
+{% endblock tituloCore %}
+
+{% block Core %}
+
+<div class="card">
+    <div class="card-header">
+        Listar Productos
+    </div>
+    <div class="card-body">
+        <h4 class="card-tittle">Productos</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>IDProducto</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Foto</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>{% for p in productos %}
+                    <td>{{ p.idProducto }}</td>
+                    <td>{{ p.nombreProducto }}</td>
+                    <td>{{ p.descripcion }}</td>
+                    <td>{% if p.foto %}
+                        <img src="{{ p.foto.url }}" style="height: 100%;max-height: 100px;  width: 100%;max-width: 100px;">
+                    {% endif %}</td>
+                    <td>{{ p.precio }}</td>
+                    <td>{{ p.categoria }}</td>
+                    <td>
+                        <a name="eliminar" id="eliminar" role="button" class="btn btn-info" href="{% url 'eliminar' p.idProducto %}">Eliminar</a><br>
+                        <a name="modificar" id="modificar" role="modificar" class="btn btn-info" href="{% url 'modificarProducto' p.idProducto  %}">Modificar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+
+
+{% endblock Core %}
+
+
+
+

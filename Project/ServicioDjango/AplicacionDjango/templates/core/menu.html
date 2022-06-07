@@ -1,0 +1,66 @@
+{% extends 'core/PlantillaHome.html' %}
+{% block tituloCore %}
+    Menu Productos
+{% endblock tituloCore %}
+
+ 
+{% block Core%}
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+    <div class="w3-content">
+
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">EL MENU DE LA VIEJA</h1>
+        <div class="w3-row w3-center w3-border w3-border-dark-grey">
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Ensalada</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+                <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Compatir</div>
+            </a>
+        </div>
+
+        <!-- Pizza -->
+
+          
+        <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+            {% for i in pizza %}
+            <h1><b>{{ i.nombreProducto}}</b> <span class="w3-right w3-tag w3-dark-grey w3-round">{{i.precio}}</span>
+            </h1>
+            <p class="w3-text-grey">{{i.descripcion}</p>
+            { % endfor %}
+            <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+            <hr>
+
+        </div>
+
+        <!--Pasta  -->
+        <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+            {%for i in pasta %}
+            <h1><b>{{i.nombreProducto}}</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span
+                    class="w3-right w3-tag w3-dark-grey w3-round">{{i.precio}}</span></h1>
+            <p class="w3-text-grey">{{i.descripcion}}</p>
+            <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+            <hr>
+            {% endfor %}
+        </div>
+
+        <!--Starter  -->
+        <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+            {% for i in star %}
+            <h1><b>{{i.nombreProducto}}</b> <span class="w3-tag w3-grey w3-round">Ocacional</span><span
+                    class="w3-right w3-tag w3-dark-grey w3-round">{{i.precio}}</span></h1>
+            <p class="w3-text-grey">{{i.descripcion}}</p>
+            <button class="button" class="w3-right w3-tag w3-dark-grey w3-round">Agregar</button>
+            <hr>
+            {% endfor %}
+        </div>
+
+        <br>
+    </div>
+</div>
+
+{% endblock %}

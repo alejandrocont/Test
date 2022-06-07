@@ -1,0 +1,40 @@
+<!-- registro usuario -->
+<h2>Registrate Aqui</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Registrarse</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="{% url 'registro' %}" name="registro" method="get" enctype="multipart/form-data" id="registro">
+    {% csrf_token %}
+    <div class="container form-group">
+      <h1>Registro</h1>
+      <p>Favor llenar las casillas con la informacion solicitada</p>
+      <hr>
+      <label for="nombre"><b>Nombre de Usuario:</b> </label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ingrese nombre de usuario"  value="{{Usuario.nombreUsuario}}" required readonly>
+            
+      <label for="email"><b>Ingrese Email:</b></label><hr>
+      <input type="email" id="email" class="form-control"  placeholder="Correo@dominio.com" name="email" value="{{Usuario.correoUsuaurio}}" readonly required> <hr>
+
+      <label for="psw"><b>Ingrese Contraseña:</b></label>
+      <input type="password" id="password1" class="form-control" placeholder="Ingrese Password" name="password1" required readonly>
+
+      <label for="psw-repeat"><b>Repita Contraseña</b></label>
+      <input type="password" id="password2" class="form-control" placeholder="Repita Password" name="password2" required readonly> 
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Recordarme
+      </label>
+
+      <p>Al crear una cuenta, usted acepta nuestros derechos reservados <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button"  href="{% url 'home2' %}" class="cancelbtn">Cancelar</button>
+        <button type="submit" class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="submit">Registrarse</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

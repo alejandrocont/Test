@@ -1,0 +1,10 @@
+<h4>¿Estas seguro?</h4>
+
+<form class="form" method="post">
+  {% csrf.token %}
+  {{ form.as_p }}
+
+  <button type="submit" id="submit" class="btn btn-primary">Registrar</button>
+</form>
+
+

@@ -1,0 +1,65 @@
+{% extends 'core/PlantillaHome.html' %}
+
+{% block tituloCore %}
+
+Destacado
+
+{% endblock tituloCore %}
+
+{% block Core%}
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+    <div class="w3-content">
+        <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Destacado</h1>
+        <div class="container">
+            <h2>Categorias</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                {% for item in items %}
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="{{item.idProducto}}" class="active"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <section class="conteiner">
+                            <article class="post">
+                                <h2>{{item.nombreProducto}}</h2>
+                                <div>
+                                    {% if p.foto %}
+                                    <img src="{{ p.foto.url }}" class="foto" id="foto_p"
+                                        style="height: 100%;max-height: 100px;  width: 100%;max-width: 100px;">
+                                    {% endif %}
+                                </div>
+                                <p class="descripcion">{{item.descripcion}}</p>
+                            </article>
+                            <aside class="precio">
+                                <p>precio:${{item.precio}}</p>
+                            </aside>
+                            <button type="button" class="btn btn-primary"> <a href="{% url 'carrito' %}">agregar al
+                                    carrito</a>
+                            </button>
+                        </section>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr size="3px" />
+    <div class="w3-row">
+        <div class="w3-col s6">
+            <p>Lun & Jue Cerrado</p>
+            <p>Miercoles 10:00 hr - 24:00hr </p>
+            <p>Martes 12:00 hr - 24:00 hr </p>
+        </div>
+        <div class="w3-col s6">
+            <p>Vie 10:00 hr - 12:00 hr</p>
+            <p>Sabado 10:00 hr - 23:00 hr </p>
+            <p>Domingo Cerrado</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

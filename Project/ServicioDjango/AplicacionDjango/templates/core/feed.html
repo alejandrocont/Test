@@ -1,0 +1,22 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+   Inicio de Sesion
+{% endblock tituloCore %}
+
+{% block Core %}
+
+
+<div class="card">
+    <div class="card-header">
+        Inicio de Sesion
+    </div>
+    <div class="card-body">
+        <h4 class="card-tittle">Ingresar</h4>
+
+        {% include 'AplicacionDjango/Sesion.html'  %}   
+
+    </div>
+</div>
+
+{% endblock Core %}

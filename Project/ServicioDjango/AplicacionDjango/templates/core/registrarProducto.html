@@ -1,0 +1,31 @@
+{% extends 'core/PantillaHome.html' %}
+
+{% block tituloCore %}
+    Agregar Producto Nuevo
+{% endblock tituloCore %}
+
+{% block Core %}
+
+
+<div class="card">
+    <div class="card-header">
+        Agregar un Producto
+    </div>
+    <div class="card-body">
+        <h4 class="card-tittle">Datos del Producto</h4>
+
+        {% if messages %}
+        <div>
+            {% for i in messages %}
+                <p style="color: red;">{{ i }}</p>
+            {% endfor %}
+        </div>
+
+        {% endif %}
+        
+        {% include 'AplicacionDjango/formulario2.html'  %}   
+
+    </div>
+</div>
+
+{% endblock Core %}
